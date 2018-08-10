@@ -1,13 +1,11 @@
 {
-    "name": "reconnecting-websocket",
-    "version": "4.0.0-rc5",
+    "name": "@october/reconnecting-websocket",
+    "version": "1.0.0",
     "description": "Reconnecting WebSocket",
     "main": "./dist/reconnecting-websocket-cjs.js",
-    "module": "./dist/reconnecting-websocket.mjs",
     "types": "./dist/reconnecting-websocket.d.ts",
     "scripts": {
-        "build":
-            "npm run clean && rollup -c && uglifyjs --compress --mangle -o dist/reconnecting-websocket-iife.min.js dist/reconnecting-websocket-iife.js",
+        "build": "npm run clean && rollup -c && uglifyjs --compress --mangle -o dist/reconnecting-websocket-iife.min.js dist/reconnecting-websocket-iife.js",
         "test": "nyc --reporter=text-summary --reporter=lcov ava --verbose --serial test/test.js",
         "clean": "del dist && del coverage && del .nyc_output",
         "report": "nyc report --reporter=html && opn coverage/index.html",
@@ -62,7 +60,10 @@
     "homepage": "https://github.com/pladaria/reconnecting-websocket#readme",
     "lint-staged": {
         "linters": {
-            "*.{js,md,ts}, !dist/*": ["prettier --write", "git add"]
+            "*.{js,md,ts}, !dist/*": [
+                "prettier --write",
+                "git add"
+            ]
         }
     }
 }
