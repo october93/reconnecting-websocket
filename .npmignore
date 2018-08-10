@@ -4,6 +4,7 @@
 .rpt2_cache
 .travis.yml
 .vscode
+.idea
 coverage
 npm-debug.log*
 package-lock.json
