@@ -5,6 +5,7 @@
 .travis.yml
 .vscode
 .idea
+.babelrc
 coverage
 npm-debug.log*
 package-lock.json
