@@ -1,6 +1,6 @@
 {
     "name": "@october/reconnecting-websocket",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Reconnecting WebSocket",
     "main": "./dist/reconnecting-websocket-cjs.js",
     "modules": "./dist/reconnecting-websocket.mjs",
