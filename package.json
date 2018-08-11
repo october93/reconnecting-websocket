@@ -3,6 +3,7 @@
     "version": "1.0.1",
     "description": "Reconnecting WebSocket",
     "main": "./dist/reconnecting-websocket-cjs.js",
+    "modules": "./dist/reconnecting-websocket.mjs",
     "types": "./dist/reconnecting-websocket.d.ts",
     "scripts": {
         "build": "npm run clean && rollup -c && uglifyjs --compress --mangle -o dist/reconnecting-websocket-iife.min.js dist/reconnecting-websocket-iife.js",
@@ -29,6 +30,8 @@
     "license": "MIT",
     "devDependencies": {
         "ava": "^0.25.0",
+        "babel-plugin-external-helpers": "^6.22.0",
+        "babel-preset-env": "^1.7.0",
         "coveralls": "^3.0.0",
         "del-cli": "^1.1.0",
         "husky": "^0.14.3",
@@ -37,6 +40,7 @@
         "opn-cli": "^3.1.0",
         "prettier": "^1.12.1",
         "rollup": "^0.59.1",
+        "rollup-plugin-babel": "^3.0.7",
         "rollup-plugin-typescript2": "^0.14.0",
         "tslint": "^5.10.0",
         "typescript": "^2.8.3",
@@ -65,5 +69,18 @@
                 "git add"
             ]
         }
+    },
+    "babel": {
+        "presets": [
+            [
+                "env",
+                {
+                    "modules": false
+                }
+            ]
+        ],
+        "plugins": [
+            "external-helpers"
+        ]
     }
 }

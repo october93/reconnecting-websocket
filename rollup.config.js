@@ -1,8 +1,9 @@
 import typescript from 'rollup-plugin-typescript2';
+import babel from 'rollup-plugin-babel';
 
 export default {
     input: 'reconnecting-websocket.ts',
-    plugins: [typescript()],
+    plugins: [typescript(), babel()],
     output: [
         {
             file: 'dist/reconnecting-websocket-iife.js',
