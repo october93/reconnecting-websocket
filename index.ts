@@ -226,6 +226,16 @@ const ReconnectingWebsocket = function(
         }
     };
 
+    this.reconnect = () => {
+        shouldRetry = true
+        retriesCount = 0
+        connect()
+    }
+
+    this.disableRetry = () => {
+        shouldRetry = false
+    }
+
     this.send = (data: any) => {
         ws.send(data)
     };
